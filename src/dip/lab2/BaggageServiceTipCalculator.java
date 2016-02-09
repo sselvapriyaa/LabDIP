@@ -31,6 +31,27 @@ public class BaggageServiceTipCalculator {
 
         baseTipPerBag = 1.00; // set default value
     }
+    //@Override
+       /*
+    public double getCaculatedTip() {
+        double tip = 0.00; // always initialize local variables
+
+        switch(serviceQuality) {
+            case GOOD:
+                tip = bill * GOOD_RATE;
+                break;
+            case FAIR:
+                tip = bill * FAIR_RATE;
+                break;
+            case POOR:
+                tip = bill * POOR_RATE;
+                break;
+        }
+
+        return tip;
+    }
+    
+    */
 
     public double getTipForBaggeHandler() {
         double tip = 0.00; // always initialize local variables
