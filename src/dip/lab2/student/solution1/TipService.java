@@ -18,7 +18,7 @@ public class TipService {
     public double getTip(){
         return tipCalculator.getCalculatedTip();
     }
-    public TipCalcultor getTipCalculator(){
+    public TipCalculator getTipCalculator(){
         return tipCalculator;
     }
     public void setTipCalculator(TipCalculator tipCalculator){

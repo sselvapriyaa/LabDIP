@@ -19,5 +19,12 @@ public class Startup {
         TipService mgr=new TipService(calc);
         double amt=mgr.getTip();
         System.out.println(amt);
+        
+        
+        calc= new BarberServiceTipCalculator(
+                                ServiceQuality.GOOD,100);//BarberService
+        mgr=new TipService(calc);
+        double amt1=mgr.getTip();
+        System.out.println(amt);
     }
 }
