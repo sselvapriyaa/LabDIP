@@ -9,6 +9,7 @@ package dip.lab2.student.solution1;
  *
  * @author Gladwin
  */
+//
 public class BarberServiceTipCalculator implements TipCalculator{
     private static  double MIN_BILL = 0.00;// likely to change
     private static double MAX_BILL = 100.00;// likely to change
@@ -20,7 +21,7 @@ public class BarberServiceTipCalculator implements TipCalculator{
     private static  double POOR_RATE = 0.10;//likely to change
 
     private double baseTipPerBag;
-    private int bagCount;
+    //private int bagCount;
 
     @Override
     public double getCalculatedTip() {
@@ -28,13 +29,13 @@ public class BarberServiceTipCalculator implements TipCalculator{
 
         switch(serviceQuality) {
             case GOOD:
-                tip = baseTipPerBag * bagCount * (1 + GOOD_RATE);
+                tip = baseTipPerBag  * (1 + GOOD_RATE);
                 break;
             case FAIR:
-                tip = baseTipPerBag * bagCount * (1 + FAIR_RATE);
+                tip = baseTipPerBag  * (1 + FAIR_RATE);
                 break;
             case POOR:
-                tip = baseTipPerBag * bagCount * (1 + POOR_RATE);
+                tip = baseTipPerBag  * (1 + POOR_RATE);
                 break;
         }
 
@@ -45,9 +46,9 @@ public class BarberServiceTipCalculator implements TipCalculator{
    
     private ServiceQuality serviceQuality;
 
-    public BarberServiceTipCalculator(ServiceQuality q, int bags) {
+    public BarberServiceTipCalculator(ServiceQuality q) {
         this.setServiceRating(q); // perform validation
-        this.setBagCount(bags);
+        //this.setBagCount(bags);
 
         baseTipPerBag = 1.00; // set default value
     }
@@ -61,7 +62,7 @@ public class BarberServiceTipCalculator implements TipCalculator{
         return serviceQuality;
     }
 
-    public int getBagCount() {
+    /*public int getBagCount() {
         return bagCount;
     }
 
@@ -71,7 +72,7 @@ public class BarberServiceTipCalculator implements TipCalculator{
                     "bag count must be greater than or equal to zero");
         }
         this.bagCount = bagCount;
-    }
+    }*/
 
     public double getBaseTipPerBag() {
         return baseTipPerBag;

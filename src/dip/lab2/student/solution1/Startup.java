@@ -22,7 +22,7 @@ public class Startup {
         
         
         calc= new BarberServiceTipCalculator(
-                                ServiceQuality.GOOD,100);//BarberService
+                                ServiceQuality.GOOD);//BarberService
         mgr=new TipService(calc);
         double amt1=mgr.getTip();
         System.out.println(amt);
