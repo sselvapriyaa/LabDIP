@@ -13,18 +13,21 @@ public class Startup {
      
  
     public static void main(String[] args) {
+        /*FoodServiceTipCalculator calc= new FoodServiceTipCalculator(
+                                ServiceQuality.GOOD,100);
+        calc.setGoodRate(.35);*/
         
         TipCalculator calc= new FoodServiceTipCalculator(
-                                ServiceQuality.GOOD,100);//BarberService
+                                ServiceQuality.GOOD,10);//BarberService
         TipService mgr=new TipService(calc);
         double amt=mgr.getTip();
         System.out.println(amt);
         
         
-        calc= new BarberServiceTipCalculator(
-                                ServiceQuality.GOOD);//BarberService
-        mgr=new TipService(calc);
-        double amt1=mgr.getTip();
-        System.out.println(amt);
+//        calc= new BarberServiceTipCalculator(
+//                                ServiceQuality.GOOD);//BarberService
+//        mgr=new TipService(calc);
+//        double amt1=mgr.getTip();
+//        System.out.println(amt);
     }
 }

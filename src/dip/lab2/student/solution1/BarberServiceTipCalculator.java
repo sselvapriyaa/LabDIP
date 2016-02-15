@@ -20,8 +20,9 @@ public class BarberServiceTipCalculator implements TipCalculator{
     private static  double FAIR_RATE = 0.15;//likely to change
     private static  double POOR_RATE = 0.10;//likely to change
 
-    private double baseTipPerBag;
-    //private int bagCount;
+    private double baseTipPerHeadCount;
+    private double bill;
+
 
     @Override
     public double getCalculatedTip() {
@@ -29,13 +30,13 @@ public class BarberServiceTipCalculator implements TipCalculator{
 
         switch(serviceQuality) {
             case GOOD:
-                tip = baseTipPerBag  * (1 + GOOD_RATE);
+                tip = baseTipPerHeadCount  * bill * (1 + GOOD_RATE);
                 break;
             case FAIR:
-                tip = baseTipPerBag  * (1 + FAIR_RATE);
+                tip = baseTipPerHeadCount  * bill * (1 + FAIR_RATE);
                 break;
             case POOR:
-                tip = baseTipPerBag  * (1 + POOR_RATE);
+                tip = baseTipPerHeadCount  * bill * (1 + POOR_RATE);
                 break;
         }
 
@@ -45,12 +46,19 @@ public class BarberServiceTipCalculator implements TipCalculator{
     }
    
     private ServiceQuality serviceQuality;
-
-    public BarberServiceTipCalculator(ServiceQuality q) {
+    private double tipAmount;
+    public BarberServiceTipCalculator(ServiceQuality q,double tipAmount) {
         this.setServiceRating(q); // perform validation
-        //this.setBagCount(bags);
+        this.setBillAmount(tipAmount);
 
-        baseTipPerBag = 1.00; // set default value
+        baseTipPerHeadCount = 1.00; // set default value
+    }
+    
+     public final void setBillAmount(double tipAmount) {
+        if(tipAmount < MIN_BILL) {
+            throw new IllegalArgumentException(BILL_ENTRY_ERR);
+        }
+        bill = tipAmount;
     }
    
        public final void setServiceRating(ServiceQuality q) {
@@ -74,16 +82,16 @@ public class BarberServiceTipCalculator implements TipCalculator{
         this.bagCount = bagCount;
     }*/
 
-    public double getBaseTipPerBag() {
-        return baseTipPerBag;
+    public double getBaseTipPerHeadCount() {
+        return baseTipPerHeadCount;
     }
 
-    public void setBaseTipPerBag(double baseTipPerBag) {
-        if(baseTipPerBag < 0) {
+    public void setBaseTipPerHeadCount(double baseTipPerHeadCount) {
+        if(baseTipPerHeadCount < 0) {
             throw new IllegalArgumentException(
                     "error: base tip must be greater than or equal to zero");
         }
-        this.baseTipPerBag = baseTipPerBag;
+        this.baseTipPerHeadCount = baseTipPerHeadCount;
     }
 
 }

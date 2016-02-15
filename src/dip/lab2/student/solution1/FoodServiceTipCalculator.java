@@ -48,23 +48,23 @@ public class FoodServiceTipCalculator implements TipCalculator{
         this.setBill(billAmt);
     }
 
-    public double getCaculatedTip() {
-        double tip = 0.00; // always initialize local variables
-
-        switch(serviceQuality) {
-            case GOOD:
-                tip = bill * GOOD_RATE;
-                break;
-            case FAIR:
-                tip = bill * FAIR_RATE;
-                break;
-            case POOR:
-                tip = bill * POOR_RATE;
-                break;
-        }
-
-        return tip;
-    }
+//    public double getCaculatedTip() {
+//        double tip = 0.00; // always initialize local variables
+//
+//        switch(serviceQuality) {
+//            case GOOD:
+//                tip = bill * GOOD_RATE;
+//                break;
+//            case FAIR:
+//                tip = bill * FAIR_RATE;
+//                break;
+//            case POOR:
+//                tip = bill * POOR_RATE;
+//                break;
+//        }
+//
+//        return tip;
+//    }
 
     public final void setBill(double billAmt) {
         if(billAmt < MIN_BILL) {
