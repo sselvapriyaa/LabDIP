@@ -9,7 +9,7 @@ import java.io.*;
  *
  * @author Gladwin
  */
-public class FileWriterManager {
+public class FileMessageOutputStrategy implements MessageOutputStrategy{
     public void writeln(String line) {
 		boolean append = false;
 		File data = new File(File.separatorChar + "Temp" + 

@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
  *
  * @author Gladwin
  */
-public class GuiOutputManager implements OutputManager {
+public class GuiMessageOutputStrategy implements MessageOutputStrategy {
 
     @Override
     public void writeln(String line) {

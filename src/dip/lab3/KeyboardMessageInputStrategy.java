@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Gladwin
  */
-public class KeyboardInputManager implements InputManager {
+public class KeyboardMessageInputStrategy implements MessageInputStrategy {
 
     @Override
     public String readln() {

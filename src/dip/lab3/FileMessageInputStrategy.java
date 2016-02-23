@@ -11,7 +11,7 @@ import java.io.*;
  *
  * @author Gladwin
  */
-public class FileInputManager implements InputManager{
+public class FileMessageInputStrategy implements MessageInputStrategy{
     private boolean lineReadFlag = false;
 
     @Override

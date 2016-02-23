@@ -10,27 +10,27 @@ package dip.lab3;
  * @author Gladwin
  */
 public class MessageService {
-    private InputManager input;
-    private OutputManager output;
+    private MessageInputStrategy input;
+    private MessageOutputStrategy output;
     
-    public MessageService(InputManager input, OutputManager output) {
+    public MessageService(MessageInputStrategy input, MessageOutputStrategy output) {
         this.input = input;
         this.output = output;
     }
 
-    public void setInput(InputManager input) {
+    public void setInput(MessageInputStrategy input) {
         this.input = input;
     }
 
-    public void setOutput(OutputManager output) {
+    public void setOutput(MessageOutputStrategy output) {
         this.output = output;
     }
 
-    public InputManager getInput() {
+    public MessageInputStrategy getInput() {
         return input;
     }
 
-    public OutputManager getOutput() {
+    public MessageOutputStrategy getOutput() {
         return output;
     }
     

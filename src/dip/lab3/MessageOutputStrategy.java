@@ -9,6 +9,6 @@ package dip.lab3;
  *
  * @author Gladwin
  */
-public interface InputManager {
-    public abstract String readln();
+public interface MessageOutputStrategy {
+    public abstract void writeln( String line );
 }

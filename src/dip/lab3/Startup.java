@@ -12,11 +12,9 @@ package dip.lab3;
 public class Startup {
     public static void main(String args[]){
         
-        InputManager input=new KeyboardInputManager();
-        OutputManager output=new ConsoleOutputManager();
+        MessageInputStrategy input=new GuiMessageInputStrategy();
+        MessageOutputStrategy output=new GuiMessageOutputStrategy();
         
-        String line=input.readln();
-        output.writeln(line);
         
         MessageService service = new MessageService(input, output);
         service.copy();

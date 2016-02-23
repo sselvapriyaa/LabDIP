@@ -9,7 +9,7 @@ package dip.lab3;
  *
  * @author Gladwin
  */
-public class ConsoleOutputManager implements OutputManager {
+public class ConsoleMessageOutputStrategy implements MessageOutputStrategy {
 
     @Override
     public void writeln(String line) {
